@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Fetch data from Server</title>
+  </head>
+  <body>
+    <h1>Localhost data:</h1>
+    <ul id="posts"></ul>
+    <form>
+      <label for="addnew">Add new: </label>
+      <input type="text" placeholder="type in to add new" />
+      <input type="submit" value="Add" />
+    </form>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="UI.js"></script>
+    <script src="postservice.js"></script>
+    <script src="main.js"></script>
+
+    <!-- <script>
+      const posts = document.querySelector("#posts");
+      fetch("http://localhost:5000/api/posts/")
+        .then(res => res.json())
+        .then(data => {
+          data.forEach(post => {
+            let li = document.createElement("li");
+            li.innerHTML = post.text;
+            posts.appendChild(li);
+          });
+        });
+    </script> -->
+
+    <!-- <script>
+      axios
+        .get("http://localhost:5000/api/posts/")
+        .then(response => {
+          let data = response.data;
+          data.forEach(post => {
+            let li = document.createElement("li");
+            li.innerHTML = post.text;
+            posts.appendChild(li);
+          });
+        })
+        .catch(err => console.log(err));
+    </script> -->
+
+    <!-- <script>
+      async function getPosts() {
+        try {
+          const response = await axios.get("http://localhost:5000/api/posts/");
+          response.data.forEach(post => {
+            let li = document.createElement("li");
+            li.innerHTML = post.text;
+            posts.appendChild(li);
+          });
+        } catch (error) {
+          console.log(error);
+        }
+      }
+
+      window.onload = getPosts();
+    </script> -->
+  </body>
+</html>
